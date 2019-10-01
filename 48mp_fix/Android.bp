@@ -1,6 +1,7 @@
 cc_prebuilt_library_shared {
     name: "libcameraservice",
     owner: "xiaomi",
+    check_elf_files: false,
     strip: {
         none: true,
     },
@@ -29,9 +30,7 @@ cc_prebuilt_library_shared {
         "libfmq",
         "libgui",
         "libhardware",
-        "libhwbinder",
         "libhidlbase",
-        "libhidltransport",
         "libjpeg",
         "libmedia_omx",
         "libmemunreachable",
@@ -59,6 +58,7 @@ cc_prebuilt_library_shared {
 cc_prebuilt_binary {
     name: "cameraserver",
     owner: "xiaomi",
+    check_elf_files: false,
     strip: {
         none: true,
     },
@@ -66,7 +66,7 @@ cc_prebuilt_binary {
     compile_multilib: "both",
     init_rc: ["../../../frameworks/av/camera/cameraserver/cameraserver.rc"],
     vintf_fragments: [
-        "../../../frameworks/av/camera/cameraserver/manifest_android.frameworks.cameraservice.service@2.0.xml",
+        "../../../frameworks/av/camera/cameraserver/manifest_android.frameworks.cameraservice.service@2.1.xml",
     ],
     shared_libs: [
         "libcameraservice",
@@ -76,7 +76,6 @@ cc_prebuilt_binary {
         "libgui",
         "libbinder",
         "libhidlbase",
-        "libhidltransport",
         "android.hardware.camera.common@1.0",
         "android.hardware.camera.provider@2.4",
         "android.hardware.camera.provider@2.5",
