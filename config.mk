@@ -15,9 +15,9 @@
 VENDOR_PATH := vendor/ANXCamera
 
 PRODUCT_COPY_FILES += \
-	$(call find-copy-subdir-files,*,$(VENDOR_PATH)/system/etc,system/etc) \
-	$(call find-copy-subdir-files,*,$(VENDOR_PATH)/system/priv-app/ANXCamera/lib/arm,system/priv-app/ANXCamera/lib/arm) \
-	$(call find-copy-subdir-files,*,$(VENDOR_PATH)/system/priv-app/ANXCamera/lib/arm64,system/priv-app/ANXCamera/lib/arm64)
+	$(call find-copy-subdir-files,*,$(VENDOR_PATH)/system/etc,$(TARGET_COPY_OUT_SYSTEM)/etc) \
+	$(call find-copy-subdir-files,*,$(VENDOR_PATH)/system/priv-app/ANXCamera/lib/arm,$(TARGET_COPY_OUT_SYSTEM)/priv-app/ANXCamera/lib/arm) \
+	$(call find-copy-subdir-files,*,$(VENDOR_PATH)/system/priv-app/ANXCamera/lib/arm64,$(TARGET_COPY_OUT_SYSTEM)/priv-app/ANXCamera/lib/arm64)
 
 PRODUCT_PACKAGES += \
     ANXCamera
